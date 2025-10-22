@@ -1,0 +1,126 @@
+/* Google Fonts enligt uppgiften (mobile-first) */
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:ital,wght@0,100;0,300;0,400;0,900;1,400&family=Satisfy&display=swap');
+
+:root{
+  --bg: #f7f7fb;
+  --ink: #1f2330;
+  --muted: #6a6f7a;
+  --card: #ffffff;
+  --brand: #0A66C2;           /* LinkedIn-blå vibbar för pepp */
+  --brand-ink: #ffffff;
+  --ring: rgba(10,102,194,.25);
+  --shadow: 0 10px 24px rgba(0,0,0,.08);
+  --radius: 16px;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body{
+  margin: 0;
+  font-family: Roboto, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  display: grid;
+  place-items: center;
+}
+
+.wrap{
+  width: min(720px, 92vw);
+  padding: 24px;
+}
+
+.hero{
+  text-align: center;
+  margin-bottom: 18px;
+}
+.hero h1{
+  margin: 0 0 6px;
+  font-family: "Permanent Marker", cursive;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+.tagline{
+  margin: 0;
+  color: var(--muted);
+}
+
+.card{
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(18px, 3vw, 28px);
+  min-height: 140px;
+  display: grid;
+  align-items: center;
+  margin: 14px 0 18px;
+  position: relative;
+}
+
+.joke{
+  font-size: clamp(1.1rem, 2.8vw, 1.5rem);
+  line-height: 1.45;
+}
+
+.error{
+  color: #b00020;
+  margin-top: 6px;
+}
+
+.actions{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn{
+  appearance: none;
+  border: 1px solid transparent;
+  background: #eceff3;
+  color: var(--ink);
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .05s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn:hover{ transform: translateY(-1px); }
+.btn:active{ transform: translateY(0); }
+.btn:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+.btn.primary{
+  background: var(--brand);
+  color: var(--brand-ink);
+}
+
+.meta{
+  margin-top: 16px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* Litet “loading” state: skimmer */
+.card[aria-busy="true"] .joke{
+  position: relative;
+  color: transparent;
+}
+.card[aria-busy="true"] .joke::after{
+  content: "";
+  display: block;
+  height: 1em;
+  width: 100%;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #eceff3 0%, #f5f7fa 50%, #eceff3 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1s linear infinite;
+}
+@keyframes shimmer{
+  0%{ background-position: 0% 0; }
+  100%{ background-position: 200% 0; }
+}
+
+/* Lite större spacing på desktop */
+@media (min-width: 720px){
+  .actions{ gap: 12px; }
+}

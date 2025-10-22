@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dad Joke Generator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <h1>Dad Joke Generator</h1>
+      <p class="tagline">Hämta ett nytt skämt med ett klick ✨</p>
+    </header>
+
+    <section class="card" aria-live="polite" aria-busy="false">
+      <div id="joke" class="joke">Tryck på knappen för ett skämt!</div>
+      <div id="error" class="error" role="alert" hidden></div>
+    </section>
+
+    <section class="actions">
+      <button id="getJokeBtn" class="btn primary">🎲 Nytt skämt</button>
+      <button id="copyBtn" class="btn">📋 Kopiera</button>
+    </section>
+
+    <footer class="meta">
+      <small>API: <a href="https://icanhazdadjoke.com/api" target="_blank" rel="noreferrer">icanhazdadjoke</a></small>
+    </footer>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
