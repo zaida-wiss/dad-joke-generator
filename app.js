@@ -19,11 +19,16 @@ function generateJoke() {
   // Gör ett API-anrop till sidan som levererar "dad jokes"
   fetch('https://icanhazdadjoke.com', config)
     .then((res) => res.json())        // När vi får svar: omvandla texten till ett JSON-objekt
-    .then((data) => {                 // När vi fått JSON-datan:
+    .then((data) => {                 // När vi fått JSON-datan
       jokeElement.innerHTML = data.joke;  // Visa själva skämtet inne i HTML-elementet på sidan
+    })
+    .catch((error) => {console.log('error',error);
+    jokeElement.innerHTML = 'Something is wrong...';
     });
 }
 
 // Lägg till en lyssnare på knappen
 // När användaren klickar på knappen körs funktionen igen och hämtar ett nytt skämt
 jokeBtn.addEventListener('click', generateJoke);
+
+

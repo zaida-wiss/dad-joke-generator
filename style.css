@@ -2,6 +2,9 @@
     box-sizing: border-box;
 }
 
+/* === Importera Google Fonts === */
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:ital,wght@0,100;0,300;0,400;0,900;1,400&family=Satisfy&display=swap');
+
 body {
     margin: 0;
     overflow: hidden;

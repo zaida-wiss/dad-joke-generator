@@ -11,7 +11,7 @@ const config = {
     'Accept': 'application/json',
   },
 };
-fetch('https://icanhazdadjoke.com/', config)
+fetch('https://icanhazdadjoke.com', config)
   .then((res) => res.json())
   .then((data) => {
     jokeElement.innerHTML = data.joke;
