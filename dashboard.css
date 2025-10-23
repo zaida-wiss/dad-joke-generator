@@ -4,5 +4,48 @@
 
 body {
     background-color: black;
-    
+    color: white;
+
+}
+header {
+    margin: 0;
+    padding:10px;
+}
+main img {
+    height: 300px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 12px);
+  gap: 2px;
+}
+.square {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.commit-grid {
+  display: grid;
+  grid-template-columns: repeat(53, 12px); /* 53 veckor per år */
+  grid-auto-rows: 12px;                    /* höjd per dagruta */
+  gap: 2px;
+  padding: 10px;
+  background: #1B2A49;
+  border-radius: 8px;
+}
+
+.commit-day {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background-color: #2d2d2d; /* tom dag (ingen commit) */
+  transition: transform 0.2s ease;
+}
+
+.commit-day:hover {
+  transform: scale(1.4);
+  cursor: pointer;
+  box-shadow: 0 0 6px #39d353;
 }
